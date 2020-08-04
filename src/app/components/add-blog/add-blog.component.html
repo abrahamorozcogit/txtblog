@@ -1,0 +1,71 @@
+<!-- Form -->
+<div class="inner-wrapper add-blog-page">
+  <form
+    [formGroup]="blogForm"
+    (ngSubmit)="submitBlogForm()"
+    #resetBlogForm="ngForm"
+    novalidate
+    class="form-container"
+  >
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        formControlName="blog_title"
+        (change)="onTitleChange()"
+        (blur)="onTitleChange()"
+      />
+
+      <div
+        *ngIf="(submitted || titleChange) && f.blog_title.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.blog_title.errors.required" class="form-field-error">
+          Field required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        formControlName="blog_author"
+        (change)="onAuthorChange()"
+        (blur)="onAuthorChange()"
+      />
+      <div
+        *ngIf="(submitted || authorChange) && f.blog_author.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.blog_author.errors.required" class="form-field-error">
+          Field required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Content</label>
+      <textarea
+        formControlName="blog_content"
+        (change)="onContentChange()"
+        (blur)="onContentChange()"
+      ></textarea>
+      <div
+        *ngIf="(submitted || contentChange) && f.blog_content.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.blog_content.errors.required" class="form-field-error">
+          Field required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit & Reset -->
+    <div class="full-wrapper button-wrapper">
+      <div class="button-wrapper">
+        <button class="submit-btn" mat-flat-button color="warn">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

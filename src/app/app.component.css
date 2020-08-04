@@ -1,0 +1,24 @@
+.header {
+  background: #282828;
+  font-weight: 400;
+  font-size: 24px;
+  height: 66px;
+  position: fixed;
+}
+
+.txt-header {
+  color: #58bcea;
+}
+
+.header-link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 15px;
+  font-size: 1rem;
+}

@@ -1,0 +1,17 @@
+<!-- Title group  -->
+<div class="blogs-page">
+  <p *ngIf="BlogData.length <= 0" class="no-data">
+    There is no blog added yet!
+  </p>
+
+  <div class="container blogs-container" *ngIf="BlogData.length > 0">
+    <div *ngFor="let item of BlogData" class="blog-container">
+      <h3 class="blog-title">{{ item.blog_title }}</h3>
+      <div class="blog-author">
+        <fa-icon [icon]="faUser" class="user-icon"></fa-icon>
+        <span class="blog-author-text"> {{ item.blog_author }} </span>
+      </div>
+      <p class="blog-content">{{ item.blog_content }}</p>
+    </div>
+  </div>
+</div>
